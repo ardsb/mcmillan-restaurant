@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String TAG = LoginActivity.class.getSimpleName();
     Button register;
+    CheckBox customer,manager;
     TextView Email, Password;
 
     @Override
@@ -36,6 +38,8 @@ public class RegisterActivity extends AppCompatActivity {
         Email.setText(email);
         Password=findViewById(R.id.txtPassword);
         Password.setText(password);
+        customer=findViewById(R.id.chckBoxCustomer);
+        manager=findViewById(R.id.chckBoxManager);
 
         register=findViewById(R.id.btnRegister);
         register.setOnClickListener(new View.OnClickListener() {

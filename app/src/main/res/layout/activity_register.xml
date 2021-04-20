@@ -81,6 +81,7 @@
                         android:id="@+id/input_layout_Password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <EditText
                             android:id="@+id/txtPassword"
                             android:layout_width="match_parent"
@@ -89,6 +90,27 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginBottom="20dp"
                             android:hint="Password" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/chckBoxCustomer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Register as a customer" />
+
+                            <CheckBox
+                                android:id="@+id/chckBoxManager"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Register as a manger" />
+                        </LinearLayout>
+
                     </com.google.android.material.textfield.TextInputLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"

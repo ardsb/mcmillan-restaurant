@@ -10,9 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.McmillanRestaurant">
+        <activity android:name=".View.CustomerFoodsActivity"></activity>
+        <activity android:name=".View.DisplayFoodActivityCustomer" />
+        <activity android:name=".View.DisplayFoodActivityManager" />
         <activity
             android:name=".View.AddFoodActivity"
-            tools:ignore="Instantiatable"></activity>
+            tools:ignore="Instantiatable" />
         <activity android:name=".View.RegisterActivity" />
         <activity
             android:name=".View.LoginActivity"

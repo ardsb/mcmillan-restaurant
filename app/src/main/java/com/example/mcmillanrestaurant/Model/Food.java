@@ -1,15 +1,15 @@
 package com.example.mcmillanrestaurant.Model;
 
-public class Food {
+import java.io.Serializable;
+
+public class Food implements Serializable {
 
     private String id;
     private String name;
     private String description;
     private String price;
 
-    public Food(){
 
-    }
 
     public Food(String id, String name, String description, String price) {
         this.id = id;
@@ -18,6 +18,9 @@ public class Food {
         this.price = price;
     }
 
+    public Food(){
+
+    }
 
     public String getId() {
         return id;

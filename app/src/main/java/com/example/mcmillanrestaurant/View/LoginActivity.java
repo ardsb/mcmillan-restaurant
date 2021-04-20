@@ -28,7 +28,7 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private String TAG = LoginActivity.class.getSimpleName();
-    Button login;
+    Button login, login2;
     TextView Email, Password,register;
 
     @Override
@@ -63,7 +63,18 @@ public class LoginActivity extends AppCompatActivity {
                 String email=Email.getText().toString();
                 String password=Password.getText().toString();
 
-                signInUser(email,password);
+                signInUserCustomer(email,password);
+            }
+        });
+
+        login2=findViewById(R.id.btnLogin2);
+        login2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email=Email.getText().toString();
+                String password=Password.getText().toString();
+
+                signInManager(email,password);
             }
         });
 
@@ -79,9 +90,34 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    public void signInUserCustomer(String email, String password){
 
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(LoginActivity.this, "Welcome to firebase"+user.getEmail(),
+                                    Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, DisplayFoodActivityCustomer.class));
+//                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+//                            updateUI(null);
+                        }
 
-    public void signInUser(String email, String password){
+                        // ...
+                    }
+                });
+    }
+
+    public void signInManager(String email, String password){
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -106,8 +142,6 @@ public class LoginActivity extends AppCompatActivity {
                         // ...
                     }
                 });
-
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

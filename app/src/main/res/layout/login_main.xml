@@ -132,7 +132,14 @@
                         android:layout_width="250dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:text="login"
+                        android:text="login as Customer"
+                        />
+                    <Button
+                        android:id="@+id/btnLogin2"
+                        android:layout_width="250dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:text="login as Manager"
                         />
 
                     <TextView

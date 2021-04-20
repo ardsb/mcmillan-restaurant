@@ -84,11 +84,6 @@
                         android:background="?android:colorBackground"
                         android:hint="Price" />
 
-                    <Spinner
-                        android:id="@+id/spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -111,12 +106,13 @@
                         android:background="?attr/colorSecondary"
                         android:text="ADD " />
                     <Button
-                        android:id="@+id/btnUpdate"
+                        android:id="@+id/btnView"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
                         android:background="?attr/colorSecondary"
-                        android:text="Update " />
+                        android:text="View " />
 
                 </LinearLayout>
 

@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
     android:orientation="vertical"
+    app:cardBackgroundColor="#00D50505"
     card_view:cardCornerRadius="5dp"
     card_view:cardElevation="2dp"
-    android:layout_margin="2dp"
     card_view:contentPadding="16dp">
 
     <LinearLayout
+        android:id="@+id/layoutFood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layoutFood"
         android:orientation="vertical"
         android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:srcCompat="@drawable/ic_baseline_image_24"
+            card_view:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/txtFoodName"
@@ -29,11 +37,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Food Description" />
+
         <TextView
             android:id="@+id/txtFoodPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Food Price" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="50dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="Delete"
+                android:backgroundTint="@color/design_default_color_error"/>
+
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Edit" />
+        </LinearLayout>
 
     </LinearLayout>
 
